@@ -1,3 +1,4 @@
+import { useState } from "react";
 import logo from './logo.svg';
 import './App.css';
 
@@ -20,11 +21,15 @@ function Display({display}) {
 }
 
 function App() {
+	
+	const[disp, setDisp] = useState(0);
+	
 	const numberClickHandler = (e) => {
 		e.preventDefault();
 		const value = e.target.innerHTML;
 	
 		console.log(value);
+		setDisp(value);
 	
 	}
 	
@@ -33,7 +38,7 @@ function App() {
 		const value = e.target.innerHTML;
 		
 		console.log(value);
-		
+		setDisp(value);
 		
 	}
 	
@@ -42,6 +47,7 @@ function App() {
 		const value = e.target.innerHTML;
 		
 		console.log(value);
+		setDisp(value);
 	
 	}
 	
@@ -50,7 +56,7 @@ function App() {
 		const value = e.target.innerHTML;
 		
 		console.log(value);
-	
+		setDisp(value);
 	}
 	
   return (
