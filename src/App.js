@@ -95,7 +95,6 @@ function App() {
 		setNum2(null);
 		setOper(null);
 	}
-	
   return (
   <div className="Calculator">
   <div className="calculatorName">JPCNLSS BS-CPE3A</div>
