@@ -25,77 +25,41 @@ function Display({display}) {
 function App() {
 	
 	const[disp, setDisp] = useState(0);
-	const[num1, setNum1] = useState(null);
-	const[oper, setOper] = useState(null);
-	const[num2, setNum2] = useState(null);
 	
 	const numberClickHandler = (e) => {
 		e.preventDefault();
-		
 		const value = e.target.innerHTML;
-		if(oper === null){
-			if(num1 === null){
-				setNum1(value);
-				setDisp(value);
-			} else {
-				setNum1(num1+value);
-				setDisp(num1+value);
-			}
-		} else {
-			if(num2 === null){
-				setNum2(value);
-				setDisp(value);
-			} else {
-				setNum2(num2+value);
-				setDisp(num2+value);
-			}
-			
-		console.log(num1 + " " + oper + " " + num2);
-		}
-		
+	
+		console.log(value);
+		setDisp(value);
+	
 	}
 	
 	const operatorClickHandler = (e) => {
 		e.preventDefault();
 		const value = e.target.innerHTML;
-		setOper(value);
+		
+		console.log(value);
 		setDisp(value);
 		
-		console.log(num1 + " " + oper + " " + num2);
 	}
 	
 	const equalClickHandler = (e) => {
 		e.preventDefault();
+		const value = e.target.innerHTML;
 		
-		if (oper === "+") {
-			setDisp(parseInt(num1) + parseInt(num2));
-		}
-		else if (oper === "-") {
-			setDisp(parseInt(num1) - parseInt(num2));
-		}
-		else if (oper === "*") {
-			setDisp(parseInt(num1) * parseInt(num2));
-		}
-		else if (oper === "/") {
-			setDisp(parseInt(num1) / parseInt(num2));
-		} else { 
-			setDisp("ERROR");
-		}
-
-		
+		console.log(value);
+		setDisp(value);
+	
 	}
 	
 	const clearClickHandler = (e) => {
 		e.preventDefault();
+		const value = e.target.innerHTML;
 		
-		
-		
-		setDisp(0);
-		setNum1(null);
-		setNum2(null);
-		setOper(null);
+		console.log(value);
+		setDisp(value);
 	}
-	
   return (
   <div className="Calculator">
   <div className="calculatorName">JPCNLSS BS-CPE3A</div>
