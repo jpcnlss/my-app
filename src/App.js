@@ -78,6 +78,13 @@ function App() {
 		}
 		else if (oper === "/") {
 			setDisp(parseInt(num1) / parseInt(num2));
+		}
+		else if (oper === "%") {
+			setDisp(parseInt(num1) % parseInt(num2));
+		}
+		else if (oper === "^") {
+			setDisp(parseInt(num1) ** parseInt(num2));
+			
 		} else { 
 			setDisp("ERROR");
 		}
@@ -86,15 +93,30 @@ function App() {
 	}
 	
 	const clearClickHandler = (e) => {
-		e.preventDefault();
-		
-		
-		
+		e.preventDefault();	
 		setDisp(0);
 		setNum1(null);
 		setNum2(null);
 		setOper(null);
 	}
+	
+	
+	const deleteClickHandler = (e) => {
+		e.preventDefault();
+		const value = e.target.innerHTML;
+		value = value.substring(0, value.length -1);
+		console.log(value);
+	}
+	
+	const onOffClickHandler = (e) => {
+		e.preventDefault();
+		const value = e.target.innerHTML;
+		setOper(value);
+		setDisp(value);
+		
+		console.log(num1 + " " + oper + " " + num2);
+	}
+	
 	
   return (
   <div className="Calculator">
@@ -113,10 +135,14 @@ function App() {
       <Button label={2} onClick={numberClickHandler}/>
       <Button label={3} onClick={numberClickHandler}/>
       <Button label={"-"} onClick={operatorClickHandler}/>
-      <Button label={"C"} onClick={clearClickHandler}/>
+      <Button label={"%"} onClick={operatorClickHandler}/>
       <Button label={0} onClick={numberClickHandler}/>
       <Button label={"="} onClick={equalClickHandler}/>
       <Button label={"+"} onClick={operatorClickHandler}/>
+	<Button label={"C"} onClick={clearClickHandler}/>
+      <Button label={"^"} onClick={operatorClickHandler}/>
+      <Button label={"DEL"} onClick={deleteClickHandler}/>
+      <Button label={"On/Off "} onClick={onOffClickHandler}/>
      </div>
     </div>
  
