@@ -6,7 +6,7 @@ import './App.css';
 
 function Button({label, onClick}) {
   return (
-    <button className="CalculatorBtn" onClick={onClick}>
+    <button className="PassCodeBtn" onClick={onClick}>
 	{label}
     </button>
   );
@@ -16,7 +16,7 @@ function Button({label, onClick}) {
   
 function Display({display}) {
   return (
-    <div className="CalcDisplay">
+    <div className="PassDisplay">
       {display}
     </div>    
   );
@@ -24,99 +24,73 @@ function Display({display}) {
 
 function App() {
 	
-	const[disp, setDisp] = useState(0);
-	const[num1, setNum1] = useState(null);
-	const[oper, setOper] = useState(null);
-	const[num2, setNum2] = useState(null);
-	
+	const[disp, setDisp] = useState("INPUT CODE");
+	const[num, setNum] = useState(null);
+	const[enter, setEnter] = useState(null);
+
+
 	const numberClickHandler = (e) => {
 		e.preventDefault();
 		
 		const value = e.target.innerHTML;
-		if(oper === null){
-			if(num1 === null){
-				setNum1(value);
+		if(enter === null){
+			if(num === null){
+				setNum(value);
 				setDisp(value);
 			} else {
-				setNum1(num1+value);
-				setDisp(num1+value);
+				setNum(num+value);
+				setDisp(num+value);
 			}
-		} else {
-			if(num2 === null){
-				setNum2(value);
-				setDisp(value);
-			} else {
-				setNum2(num2+value);
-				setDisp(num2+value);
-			}
+		
 			
-		console.log(num1 + " " + oper + " " + num2);
+			
+		console.log(num);
 		}
 		
 	}
 	
-	const operatorClickHandler = (e) => {
-		e.preventDefault();
-		const value = e.target.innerHTML;
-		setOper(value);
-		setDisp(value);
-		
-		console.log(num1 + " " + oper + " " + num2);
-	}
 	
-	const equalClickHandler = (e) => {
+	const enterClickHandler = (e) => {
 		e.preventDefault();
 		
-		if (oper === "+") {
-			setDisp(parseInt(num1) + parseInt(num2));
-		}
-		else if (oper === "-") {
-			setDisp(parseInt(num1) - parseInt(num2));
-		}
-		else if (oper === "*") {
-			setDisp(parseInt(num1) * parseInt(num2));
-		}
-		else if (oper === "/") {
-			setDisp(parseInt(num1) / parseInt(num2));
+		if (num === "2020001915") {
+			setDisp("SUCCESS");
+		
 		} else { 
-			setDisp("ERROR");
+			setDisp("INVALID");
 		}
+		
 
 		
 	}
 	
-	const clearClickHandler = (e) => {
-		e.preventDefault();
-		
-		
-		
-		setDisp(0);
-		setNum1(null);
-		setNum2(null);
-		setOper(null);
+	const resetClickHandler = (e) => {
+		e.preventDefault();	
+		setDisp("INPUT CODE");
+		setNum(null);
+
 	}
 	
+	
+	
   return (
-  <div className="Calculator">
-  <div className="calculatorName">JPCNLSS BS-CPE3A</div>
+  <div className="PassCode">
+  <div className="PassCodeName">JPCNLSS BS-CPE3A</div>
     <Display display={disp}/>
 	<div className="ButtonContainer">
       <Button label={7} onClick={numberClickHandler}/>
       <Button label={8} onClick={numberClickHandler}/>
       <Button label={9} onClick={numberClickHandler}/>
-      <Button label={"/"} onClick={operatorClickHandler}/>
       <Button label={4} onClick={numberClickHandler}/>
       <Button label={5} onClick={numberClickHandler}/>
       <Button label={6} onClick={numberClickHandler}/>
-      <Button label={"*"} onClick={operatorClickHandler}/>
       <Button label={1} onClick={numberClickHandler}/>
       <Button label={2} onClick={numberClickHandler}/>
       <Button label={3} onClick={numberClickHandler}/>
-      <Button label={"-"} onClick={operatorClickHandler}/>
-      <Button label={"C"} onClick={clearClickHandler}/>
+      <Button label={"Reset"} onClick={resetClickHandler}/>
       <Button label={0} onClick={numberClickHandler}/>
-      <Button label={"="} onClick={equalClickHandler}/>
-      <Button label={"+"} onClick={operatorClickHandler}/>
+      <Button label={"Enter"} onClick={enterClickHandler}/>
+     
      </div>
     </div>
  
