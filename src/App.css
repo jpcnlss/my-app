@@ -47,7 +47,7 @@ body {
   align-items: flex-start;
 }
 
-.calculatorName {
+.PassCodeName {
 	flex: 0 1 100%;
   color: WHITE;
   background: GRAY;
@@ -55,7 +55,7 @@ body {
   font-family: 'Italic';
   
 }
-.Calculator {
+.PassCode {
   display: flex;
   flex-wrap: wrap;
 }
@@ -68,7 +68,7 @@ body {
   
 }
 
-.CalcDisplay {
+.PassDisplay {
   display: flex;
   flex: 0 1 100%;
   border: 1px solid black;
@@ -83,9 +83,9 @@ body {
 
 
 
-.CalculatorBtn {
+.PassCodeBtn {
   display: flex;
-  flex: 0 1 25%;
+  flex: 0 1 33.3333333333%;
   font-size: 2em;
   justify-content: center;
   
