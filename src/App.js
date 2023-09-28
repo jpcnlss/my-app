@@ -98,7 +98,7 @@ function App() {
 	
   return (
   <div className="Calculator">
-  <div className="calculatorName">JPCNLSS BS-CPE3A</div>
+  <div className="calculatorName">CALCULATOR of JAYPEE CANLAS BS-CPE 4A</div>
     <Display display={disp}/>
 	<div className="ButtonContainer">
       <Button label={7} onClick={numberClickHandler}/>
