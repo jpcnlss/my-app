@@ -101,6 +101,25 @@ function App() {
 		 setDisp("JAYPEE CANLAS");
 		 
 	}
+
+	const schoolClickHandler = (e) => {
+		e.preventDefault();
+		
+		 setDisp("University of the Assumption");
+		 
+	}
+	const courseClickHandler = (e) => {
+		e.preventDefault();
+		
+		 setDisp("Computer Engineering");
+		 
+	}
+	const addressClickHandler = (e) => {
+		e.preventDefault();
+		
+		 setDisp("Minalin Pampanga");
+		 
+	}
   return (
   <div className="Calculator">
   <div className="calculatorName">CALCULATOR of JAYPEE CANLAS BS-CPE 4A</div>
@@ -122,7 +141,11 @@ function App() {
       <Button label={0} onClick={numberClickHandler}/>
       <Button label={"="} onClick={equalClickHandler}/>
       <Button label={"+"} onClick={operatorClickHandler}/>
-      <Button label={"Canlas"} onClick={nameClickHandler}/>
+      <Button label={"Name"} onClick={nameClickHandler}/>
+      <Button label={"School"} onClick={schoolClickHandler}/>
+      <Button label={"Course"} onClick={courseClickHandler}/>
+      <Button label={"Address"} onClick={addressClickHandler}/>
+
      </div>
     </div>
  
