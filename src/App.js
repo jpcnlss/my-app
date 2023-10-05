@@ -98,7 +98,7 @@ function App() {
 	const nameClickHandler = (e) => {
 		e.preventDefault();
 		
-		 alert("JAYPEE CANLAS");
+		 setDisp("JAYPEE CANLAS");
 		 
 	}
   return (
