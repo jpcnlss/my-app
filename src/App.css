@@ -48,7 +48,7 @@ body {
 }
 
 .calculatorName {
-  font-size: 64;
+  padding: 10px;
   color: WHITE;
   background: GRAY;
   text-align: center;
