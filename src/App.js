@@ -95,7 +95,12 @@ function App() {
 		setNum2(null);
 		setOper(null);
 	}
-	
+	const nameClickHandler = (e) => {
+		e.preventDefault();
+		
+		 alert("JAYPEE CANLAS");
+		 
+	}
   return (
   <div className="Calculator">
   <div className="calculatorName">CALCULATOR of JAYPEE CANLAS BS-CPE 4A</div>
@@ -117,6 +122,7 @@ function App() {
       <Button label={0} onClick={numberClickHandler}/>
       <Button label={"="} onClick={equalClickHandler}/>
       <Button label={"+"} onClick={operatorClickHandler}/>
+      <Button label={"Canlas"} onClick={nameClickHandler}/>
      </div>
     </div>
  
