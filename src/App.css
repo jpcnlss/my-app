@@ -56,7 +56,7 @@ body {
   
 }
 .Calculator {
-  display: flex;
+  
   flex-wrap: wrap;
 }
 
